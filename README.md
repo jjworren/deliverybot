@@ -25,9 +25,9 @@ For more, check out the [Contributing Guide](CONTRIBUTING.md).
 
 ### Setup
 
-- npm install
-- npm run build
-- npm start
+    yarn install
+    yarn build
+    yarn start
 
 ## License
 
