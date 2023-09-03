@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.base.json",
+  "files": [],
+  "include": [],
+  "references": [
+    { "path": "packages/app" },
+    { "path": "packages/client" },
+    { "path": "packages/core" },
+    { "path": "packages/deploybot" },
+    { "path": "packages/firebase" },
+    { "path": "packages/run" },
+    { "path": "packages/slackbot" }
+  ]
+}

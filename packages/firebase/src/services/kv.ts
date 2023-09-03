@@ -1,7 +1,9 @@
 import * as admin from "firebase-admin";
 import { KVStore } from "@deliverybot/core";
 
-export class FirebaseKVStore<T> implements KVStore<T> {
+export class FirebaseKVStore<T extends FirebaseFirestore.DocumentData>
+  implements KVStore<T>
+{
   firebase: admin.app.App;
   store: admin.firestore.Firestore;
 
@@ -27,6 +29,6 @@ export class FirebaseKVStore<T> implements KVStore<T> {
     return this.store
       .collection(prefix)
       .get()
-      .then(r => r.docs.map(d => d.data() as T));
+      .then((r) => r.docs.map((d) => d.data() as T));
   }
 }

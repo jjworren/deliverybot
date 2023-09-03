@@ -13,8 +13,6 @@
     "deploy:production": "./scripts/deploy.sh production"
   },
   "dependencies": {
-    "@deliverybot/app": "*",
-    "@deliverybot/core": "*",
     "@google-cloud/logging-bunyan": "^1.2.3",
     "@google-cloud/pubsub": "^1.7.3",
     "firebase-admin": "^8.13.0",

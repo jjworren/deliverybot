@@ -1,8 +1,17 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "composite": true,
     "allowJs": false,
-    "lib": ["es2015", "es2017"],
+    "lib": [
+      "es2015",
+      "es2017",
+      "es2018",
+      "es2019.array",
+      "es2019.object",
+      "dom",
+      "dom.iterable"
+    ],
     "module": "commonjs",
     "moduleResolution": "node",
     "target": "es6",
@@ -21,7 +30,11 @@
       "src/@types",
       "../../node_modules/@types",
       "node_modules/@types"
-    ]
+    ],
+    "paths": {
+      "@deploybot/*": ["packages/*/src"]
+    }
   },
+  "exclude": ["node_modules"],
   "compileOnSave": false
 }

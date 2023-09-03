@@ -2,13 +2,7 @@
   "private": true,
   "version": "0.7.2",
   "workspaces": [
-    "packages/app",
-    "packages/client",
-    "packages/firebase",
-    "packages/core",
-    "packages/deploybot",
-    "packages/slackbot",
-    "packages/run"
+    "packages/**"
   ],
   "scripts": {
     "bump": "./scripts/bump.sh",

@@ -15,7 +15,7 @@ export function firebase(
     messageService: load(() => new FirebaseMessageBus(firebase)),
     userService: load(() => new FirebaseUsersStore(firebase)),
     pubsubService: load(() => new FirebasePubSubStore(firebase)),
-  };
+  } as any;
 }
 
 function load<T>(fn: () => T) {

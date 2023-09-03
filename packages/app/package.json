@@ -17,9 +17,6 @@
     "test": "NODE_ENV=test jest"
   },
   "dependencies": {
-    "@deliverybot/core": "*",
-    "@deliverybot/deploybot": "*",
-    "@deliverybot/slackbot": "*",
     "lodash.get": "^4.4.2",
     "js-yaml": "^4.1.0",
     "node-fetch": "^2.6.6",

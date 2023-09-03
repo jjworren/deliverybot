@@ -1,7 +1,9 @@
 import * as admin from "firebase-admin";
 import { MessageBus, UnimplementedError } from "@deliverybot/core";
 
-export class FirebaseMessageBus<T> implements MessageBus<T> {
+export class FirebaseMessageBus<T extends FirebaseFirestore.DocumentData>
+  implements MessageBus<T>
+{
   firebase: admin.app.App;
   store: admin.firestore.Firestore;
   auth: admin.auth.Auth;
