@@ -13,6 +13,7 @@
     "build:watch": "tsc --watch --preserveWatchOutput"
   },
   "dependencies": {
+    "@primer/css": "21.0.8",
     "apexcharts": "^3.30.0",
     "stimulus": "^1.1.1",
     "turbolinks": "^5.2.0",
