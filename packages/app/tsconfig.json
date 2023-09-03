@@ -1,33 +1,11 @@
 {
-  "compilerOptions": {
-    "allowJs": false,
-    "lib": [
-      "es2015",
-      "es2017"
-    ],
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "target": "es5",
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUnusedLocals": false,
-    "pretty": true,
-    "strict": true,
-    "sourceMap": true,
-    "outDir": "./lib",
-    "skipLibCheck": true,
-    "noImplicitAny": true,
-    "esModuleInterop": true,
-    "declaration": true,
-    "resolveJsonModule": true,
-    "typeRoots": [
-      "src/@types",
-      "../../node_modules/@types",
-      "node_modules/@types"
-    ],
-  },
-  "includes": [
-    "src/**/*"
-  ],
-  "compileOnSave": false
+  "compilerOptions": { "outDir": "./lib" },
+  "extends": "../../tsconfig.base.json",
+  "includes": ["src/**/*"],
+  "exclude": ["../../node_modules", "./node_modules"],
+  "references": [
+    { "path": "../core" },
+    { "path": "../deploybot" },
+    { "path": "../slackbot" }
+  ]
 }

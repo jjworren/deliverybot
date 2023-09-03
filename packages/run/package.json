@@ -17,9 +17,9 @@
     "run": "node lib/index.js"
   },
   "dependencies": {
-    "@deliverybot/app": "../app",
-    "@deliverybot/core": "../core",
-    "@deliverybot/client": "../client",
+    "@deliverybot/app": "*",
+    "@deliverybot/core": "*",
+    "@deliverybot/client": "*",
     "dotenv": "^8.6.0"
   },
   "devDependencies": {

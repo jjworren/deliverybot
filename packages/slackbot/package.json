@@ -14,8 +14,8 @@
     "test": "NODE_ENV=test jest"
   },
   "dependencies": {
-    "@deliverybot/core": "../core",
-    "@deliverybot/deploybot": "../deploybot",
+    "@deliverybot/core": "*",
+    "@deliverybot/deploybot": "*",
     "node-fetch": "^2.6.6"
   },
   "devDependencies": {

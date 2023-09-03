@@ -1,9 +1,9 @@
 import { App as OctokitApp } from "@octokit/app";
-import { Octokit } from '@octokit/rest';
+import { Octokit } from "@octokit/rest";
 import Webhooks from "@octokit/webhooks";
 import { EventEmitter } from "promise-events";
 import { Cache } from "./cache";
-import { Context } from "./context";
+import { Context, WebhookPayloadWithRepository } from "./context";
 import { Logger } from "./logger";
 
 export type ApplicationFunction = (app: Application) => void;
@@ -17,7 +17,9 @@ export interface Options {
   githubToken?: string;
 }
 
-export type OnCallback<T> = (context: Context<T>) => Promise<void>;
+export type OnCallback<T extends WebhookPayloadWithRepository> = (
+  context: Context<T>,
+) => Promise<void>;
 
 // Some events can't get an authenticated client (#382):
 function isUnauthenticatedEvent(event: Webhooks.WebhookEvent<any>) {
@@ -64,7 +66,7 @@ export class Application {
    */
   public load(appFn: ApplicationFunction | ApplicationFunction[]): Application {
     if (Array.isArray(appFn)) {
-      appFn.forEach(a => this.load(a));
+      appFn.forEach((a) => this.load(a));
     } else {
       appFn(this);
     }
@@ -434,7 +436,7 @@ export class Application {
         },
       );
     } else {
-      eventName.forEach(e => this.on(e, callback));
+      eventName.forEach((e) => this.on(e, callback));
     }
   }
 
