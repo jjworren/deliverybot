@@ -9,11 +9,20 @@ const state = {
   sockets: [],
 };
 
-function start() {
-  state.server = require("../packages/run").express.listen(3000, () => {
-    console.log("Listening on 3000");
+function proxy() {
+  const SmeeClient = require("smee-client");
+  const smee = new SmeeClient({
+    source: process.env.WEBHOOK_PROXY_URL,
+    target: `http://0.0.0.0:3000`
   });
-  state.server.on("connection", (socket) => {
+  smee.start();
+}
+
+function start() {
+  state.server = require('../packages/run/lib').express.listen(3000, () => {
+    console.log('Listening on 3000');
+  });
+  state.server.on('connection', (socket) => {
     state.sockets.push(socket);
   });
 }
@@ -37,8 +46,8 @@ function clearCache() {
 }
 
 function shutdown() {
-  ["SIGINT", "SIGTERM", "SIGQUIT"].forEach((sig) =>
-    process.on(sig, () => stop(() => process.exit(0))),
+  ["SIGINT", "SIGTERM", "SIGQUIT"].forEach(sig =>
+    process.on(sig, () => stop(() => process.exit(0)))
   );
 }
 
@@ -55,4 +64,5 @@ fs.watchFile("tmp/restart.txt", () => {
 });
 
 start();
+proxy();
 shutdown();

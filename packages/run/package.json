@@ -17,7 +17,7 @@
     "run": "node lib/index.js"
   },
   "dependencies": {
-    "dotenv": "^8.6.0"
+    "dotenv": "^16.3.1"
   },
   "devDependencies": {
     "css-loader": "^6.8.1",

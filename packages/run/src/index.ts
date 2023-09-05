@@ -1,7 +1,13 @@
 import * as path from "path";
 import * as fs from "fs";
 import { apps, info } from "@deliverybot/app";
-import { load, logger, Options, localServices, RegisterFunc } from "@deliverybot/core";
+import {
+  load,
+  logger,
+  Options,
+  localServices,
+  RegisterFunc,
+} from "@deliverybot/core";
 
 const services = localServices();
 const bundle = path.resolve(__dirname, "..", "bundle");

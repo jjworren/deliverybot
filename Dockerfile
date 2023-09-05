@@ -1,16 +1,14 @@
-FROM node:10.18.1-stretch-slim as builder
+FROM node:18.17.1-alpine as builder
 COPY . /app
 WORKDIR /app
-RUN apt-get update \
-    && apt-get install -y jq \
-    && apt-get clean
 RUN yarn policies set-version
 RUN yarn
 RUN yarn build
 
-FROM bitnami/node:10-prod
+FROM node:18.17.1-alpine
 ENV NODE_ENV="production"
 COPY --from=builder /app /app
 WORKDIR /app
+RUN yarn install --prod
 EXPOSE 3000
 CMD ["yarn", "server"]
