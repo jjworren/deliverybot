@@ -5,7 +5,7 @@ on:
 env:
   CI: true
   REGISTRY: ghcr.io
-  IMAGE_NAME: jjworren/${{ github.repository }}
+  IMAGE_NAME: ${{ github.repository }}
 
 jobs:
   build-and-push-image:
