@@ -1,4 +1,3 @@
-
 # Hosting
 
 As of September 20th 2020, DeliveryBot transitioned to be a "[project that you will deploy yourself on your own infrastructure](https://deliverybot.dev/2020/02/14/deliverybot-goes-open-source/)". This document explains a simple path to hosting DeliveryBot yourself.
