@@ -15,7 +15,7 @@
   "dependencies": {
     "@octokit/app": "^4.1.0",
     "@octokit/rest": "^16.43.2",
-    "@octokit/webhooks": "^6.3.2",
+    "@octokit/webhooks": "^9.26.3",
     "bunyan": "^1.8.15",
     "bunyan-format": "^0.2.1",
     "cache-manager": "^2.11.1",
