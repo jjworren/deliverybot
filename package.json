@@ -20,7 +20,7 @@
     "@babel/preset-env": "^7.22.15",
     "babel-loader": "^9.1.3",
     "dotenv": "latest",
-    "esbuild": "^0.19.2",
+    "esbuild": "^0.25.0",
     "handlebars-loader": "^1.7.3",
     "prettier": "^2.4.1",
     "smee-client": "^1.2.2",
